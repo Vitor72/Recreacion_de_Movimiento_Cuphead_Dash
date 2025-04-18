@@ -1,11 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://btuwowh8rjwsi"]
+[gd_scene load_steps=14 format=3 uid="uid://btuwowh8rjwsi"]
 
-[ext_resource type="Texture2D" uid="uid://ooxtqp07yls0" path="res://icon.svg" id="1_48aib"]
+[ext_resource type="Script" uid="uid://dqgugqnqo4bhd" path="res://personaje.gd" id="1_47rpa"]
 [ext_resource type="Texture2D" uid="uid://b5hsj33r8yx0k" path="res://Sprite/char_gold.png" id="2_47rpa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w730s"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hbjos"]
+size = Vector2(36, 51.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vc88a"]
 atlas = ExtResource("2_47rpa")
@@ -84,22 +83,22 @@ animations = [{
 }]
 
 [node name="Personaje" type="CharacterBody2D"]
+script = ExtResource("1_47rpa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, 1.25)
 shape = SubResource("RectangleShape2D_w730s")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_48aib")
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_hbjos")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_ncej6")
 animation = &"Movimiento"
 frame = 1
 frame_progress = 0.926462
+
+[node name="Dash_on" type="Timer" parent="."]
+
+[node name="Cooldawn_Dash" type="Timer" parent="."]
+
+[connection signal="timeout" from="Dash_on" to="." method="_on_dash_on_timeout"]
+[connection signal="timeout" from="Cooldawn_Dash" to="." method="_on_cooldawn_dash_timeout"]
