@@ -30,7 +30,7 @@ size = Vector2(103, 81)
 [node name="Nivel_Prueba" type="Node2D"]
 
 [node name="Piso" type="StaticBody2D" parent="."]
-position = Vector2(538, 625)
+position = Vector2(594, 314)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Piso"]
 position = Vector2(936, -2.5)
@@ -38,7 +38,7 @@ scale = Vector2(9.44, 1)
 shape = SubResource("RectangleShape2D_eye1f")
 
 [node name="Pared" type="StaticBody2D" parent="."]
-position = Vector2(169, 341)
+position = Vector2(225, 30)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pared"]
 position = Vector2(-229, 176)
@@ -47,7 +47,7 @@ scale = Vector2(1.72, 1)
 shape = SubResource("RectangleShape2D_jqo2b")
 
 [node name="Pared2" type="StaticBody2D" parent="."]
-position = Vector2(2998, 515)
+position = Vector2(3054, 204)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pared2"]
 position = Vector2(0, -30.75)
@@ -56,48 +56,52 @@ scale = Vector2(1.72, 1)
 shape = SubResource("RectangleShape2D_2q1oh")
 
 [node name="Personaje" parent="." instance=ExtResource("2_jqo2b")]
-position = Vector2(48, 586)
+position = Vector2(104, 275)
 
 [node name="Camera2D" type="Camera2D" parent="Personaje"]
-position = Vector2(177, -83)
+position = Vector2(82, -84)
 zoom = Vector2(2, 2)
+limit_left = -1
+limit_top = -1
+limit_right = 10000
+limit_bottom = 630
 
 [node name="Fondo" type="Sprite2D" parent="."]
 z_index = -5
-position = Vector2(1473, 497)
+position = Vector2(1529, 186)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_dyfjs")
 
 [node name="Cubo 1" type="StaticBody2D" parent="."]
-position = Vector2(677, 586)
+position = Vector2(733, 275)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cubo 1"]
 position = Vector2(-1.5, -5)
 shape = SubResource("RectangleShape2D_dyfjs")
 
 [node name="Cubo 2" type="StaticBody2D" parent="."]
-position = Vector2(954, 582)
+position = Vector2(1010, 271)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cubo 2"]
 position = Vector2(-1.5, -48.5)
 shape = SubResource("RectangleShape2D_m6iuf")
 
 [node name="Cubo 3" type="StaticBody2D" parent="."]
-position = Vector2(1800, 593)
+position = Vector2(1856, 282)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cubo 3"]
 position = Vector2(0, -40)
 shape = SubResource("RectangleShape2D_q6eb2")
 
 [node name="Cubo 4" type="StaticBody2D" parent="."]
-position = Vector2(2309, 601)
+position = Vector2(2365, 290)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cubo 4"]
 position = Vector2(-0.5, -68.5)
 shape = SubResource("RectangleShape2D_swon0")
 
 [node name="Cubo 5" type="StaticBody2D" parent="."]
-position = Vector2(2412, 588)
+position = Vector2(2468, 277)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cubo 5"]
 position = Vector2(-3.5, -2.5)

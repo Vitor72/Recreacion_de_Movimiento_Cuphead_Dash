@@ -199,7 +199,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"dash",
-"speed": 10.0
+"speed": 20.0
 }]
 
 [node name="Personaje" type="CharacterBody2D"]
@@ -212,7 +212,7 @@ shape = SubResource("RectangleShape2D_w730s")
 [node name="Animaciones" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.55, 0.55)
 sprite_frames = SubResource("SpriteFrames_ncej6")
-animation = &"Idle"
+animation = &"dash"
 
 [node name="Dash_on" type="Timer" parent="."]
 one_shot = true

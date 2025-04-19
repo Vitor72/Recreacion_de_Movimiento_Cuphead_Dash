@@ -22,6 +22,7 @@ func _physics_process(delta):
 	else:
 		##velocity.x = 0
 		velocity.x = move_toward(velocity.x, 0, speed)
+		
 	if Input.is_action_just_pressed("Dash"):
 		if dash == true:
 			speed = 200 + 350

@@ -15,6 +15,10 @@ run/main_scene="uid://xs8yljmmcl0q"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_height=612
+
 [input]
 
 Dash={
