@@ -5,14 +5,13 @@ const JUMP_VELOCITY : int = -550.0
 var gravity : int = 1200
 var dash : bool = true
 var maximo_dash : int = 2
+
 func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
-
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-	
 	var direction = Input.get_axis("ui_left", "ui_right")
 	if direction:
 		velocity.x = direction * speed
@@ -31,11 +30,10 @@ func _physics_process(delta):
 			$Dash_on.start(0.3)
 			dash = false
 
-
 	if is_on_floor():
 		if velocity.x != 0:
 			$Animaciones.animation = "Move"
-##			$Animaciones.flip_h = velocity.x < 0 
+
 	elif not is_on_floor():
 		if velocity.y <= -1:
 			$Animaciones.animation = "Jump"

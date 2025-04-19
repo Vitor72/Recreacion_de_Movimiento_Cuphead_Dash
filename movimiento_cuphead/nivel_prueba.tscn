@@ -62,7 +62,7 @@ position = Vector2(48, 586)
 position = Vector2(177, -83)
 zoom = Vector2(2, 2)
 
-[node name="Hjkh" type="Sprite2D" parent="."]
+[node name="Fondo" type="Sprite2D" parent="."]
 z_index = -5
 position = Vector2(1473, 497)
 scale = Vector2(1.5, 1.5)
