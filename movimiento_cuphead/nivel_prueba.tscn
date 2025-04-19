@@ -1,72 +1,104 @@
-[gd_scene load_steps=4 format=3 uid="uid://xs8yljmmcl0q"]
+[gd_scene load_steps=11 format=3 uid="uid://xs8yljmmcl0q"]
 
-[ext_resource type="Texture2D" uid="uid://ooxtqp07yls0" path="res://icon.svg" id="1_dyfjs"]
+[ext_resource type="Texture2D" uid="uid://b80qbg6uokrjs" path="res://Sprite/hjkh.png" id="1_dyfjs"]
 [ext_resource type="PackedScene" uid="uid://btuwowh8rjwsi" path="res://Personaje.tscn" id="2_jqo2b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eye1f"]
-size = Vector2(24, 23)
+size = Vector2(324.364, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jqo2b"]
+size = Vector2(132.558, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2q1oh"]
+size = Vector2(170.058, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dyfjs"]
+size = Vector2(101, 74)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m6iuf"]
+size = Vector2(91, 165)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6eb2"]
+size = Vector2(114, 126)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_swon0"]
+size = Vector2(93, 171)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c482b"]
+size = Vector2(103, 81)
 
 [node name="Nivel_Prueba" type="Node2D"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Piso" type="StaticBody2D" parent="."]
 position = Vector2(538, 625)
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-scale = Vector2(1.888, 0.2)
-texture = ExtResource("1_dyfjs")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, 0.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Piso"]
+position = Vector2(936, -2.5)
 scale = Vector2(9.44, 1)
 shape = SubResource("RectangleShape2D_eye1f")
+
+[node name="Pared" type="StaticBody2D" parent="."]
+position = Vector2(169, 341)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pared"]
+position = Vector2(-229, 176)
+rotation = 1.5708
+scale = Vector2(1.72, 1)
+shape = SubResource("RectangleShape2D_jqo2b")
+
+[node name="Pared2" type="StaticBody2D" parent="."]
+position = Vector2(2998, 515)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pared2"]
+position = Vector2(0, -30.75)
+rotation = 1.5708
+scale = Vector2(1.72, 1)
+shape = SubResource("RectangleShape2D_2q1oh")
 
 [node name="Personaje" parent="." instance=ExtResource("2_jqo2b")]
-position = Vector2(468, 562)
+position = Vector2(48, 586)
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2(775, 625)
+[node name="Camera2D" type="Camera2D" parent="Personaje"]
+position = Vector2(177, -83)
+zoom = Vector2(2, 2)
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
-scale = Vector2(1.888, 0.2)
+[node name="Hjkh" type="Sprite2D" parent="."]
+z_index = -5
+position = Vector2(1473, 497)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_dyfjs")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(0, 0.5)
-scale = Vector2(9.44, 1)
-shape = SubResource("RectangleShape2D_eye1f")
+[node name="Cubo 1" type="StaticBody2D" parent="."]
+position = Vector2(677, 586)
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="StaticBody2D2"]
-position = Vector2(238, 0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cubo 1"]
+position = Vector2(-1.5, -5)
+shape = SubResource("RectangleShape2D_dyfjs")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2/StaticBody2D2"]
-scale = Vector2(1.888, 0.2)
-texture = ExtResource("1_dyfjs")
+[node name="Cubo 2" type="StaticBody2D" parent="."]
+position = Vector2(954, 582)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2/StaticBody2D2"]
-position = Vector2(0, 0.5)
-scale = Vector2(9.44, 1)
-shape = SubResource("RectangleShape2D_eye1f")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cubo 2"]
+position = Vector2(-1.5, -48.5)
+shape = SubResource("RectangleShape2D_m6iuf")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="StaticBody2D2/StaticBody2D2"]
-position = Vector2(-714, 0)
+[node name="Cubo 3" type="StaticBody2D" parent="."]
+position = Vector2(1800, 593)
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2/StaticBody2D2/StaticBody2D2"]
-scale = Vector2(1.888, 0.2)
-texture = ExtResource("1_dyfjs")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cubo 3"]
+position = Vector2(0, -40)
+shape = SubResource("RectangleShape2D_q6eb2")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2/StaticBody2D2/StaticBody2D2"]
-position = Vector2(0, 0.5)
-scale = Vector2(9.44, 1)
-shape = SubResource("RectangleShape2D_eye1f")
+[node name="Cubo 4" type="StaticBody2D" parent="."]
+position = Vector2(2309, 601)
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="StaticBody2D2/StaticBody2D2/StaticBody2D2"]
-position = Vector2(-239, 0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cubo 4"]
+position = Vector2(-0.5, -68.5)
+shape = SubResource("RectangleShape2D_swon0")
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2/StaticBody2D2/StaticBody2D2/StaticBody2D2"]
-scale = Vector2(1.888, 0.2)
-texture = ExtResource("1_dyfjs")
+[node name="Cubo 5" type="StaticBody2D" parent="."]
+position = Vector2(2412, 588)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2/StaticBody2D2/StaticBody2D2/StaticBody2D2"]
-position = Vector2(0, 0.5)
-scale = Vector2(9.44, 1)
-shape = SubResource("RectangleShape2D_eye1f")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cubo 5"]
+position = Vector2(-3.5, -2.5)
+shape = SubResource("RectangleShape2D_c482b")

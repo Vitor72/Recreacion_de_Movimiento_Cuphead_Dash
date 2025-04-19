@@ -110,7 +110,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Fall",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -118,7 +118,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Idle",
-"speed": 15.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -147,7 +147,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Jump",
-"speed": 15.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -176,7 +176,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Move",
-"speed": 15.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -199,7 +199,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"dash",
-"speed": 15.0
+"speed": 10.0
 }]
 
 [node name="Personaje" type="CharacterBody2D"]
@@ -210,9 +210,9 @@ position = Vector2(-3, 1.25)
 shape = SubResource("RectangleShape2D_w730s")
 
 [node name="Animaciones" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.55, 0.55)
 sprite_frames = SubResource("SpriteFrames_ncej6")
-animation = &"dash"
+animation = &"Idle"
 
 [node name="Dash_on" type="Timer" parent="."]
 one_shot = true
