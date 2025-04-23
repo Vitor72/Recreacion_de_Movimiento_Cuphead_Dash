@@ -4,6 +4,7 @@ var speed : int = 200
 const JUMP_VELOCITY : int = -550.0
 var gravity : int = 1200
 var dash : bool = true
+
 var dash_stop : bool = false
 
 func _physics_process(delta):
@@ -64,13 +65,18 @@ func  _animaciones():
 	if dash_stop :
 		$Animaciones.animation = "dash"
 		$Animaciones.play("dash")
+		$Humo_salto.stop()
 	elif not is_on_floor():
 		$Animaciones.animation = "Jump"
+		$Humo_salto.animation = "Humo_Salto"
+		$Humo_salto.play("Humo_Salto")
 		$Animaciones.play("Jump")
 	elif velocity.x != 0:
+		$Humo_salto.stop()
 		$Animaciones.animation = "Move"
 		$Animaciones.play("Move")
 	else:
 		$Animaciones.animation = "Idle"
 		$Animaciones.play("Idle")
+		$Humo_salto.stop()
 	
